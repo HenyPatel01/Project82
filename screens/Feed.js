@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { FlatList } from 'react-native-gesture-handler';
+import PostCard from './PostCard';
 
 let posts = require("./temp_posts.json");
 
