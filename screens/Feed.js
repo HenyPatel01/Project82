@@ -1,16 +1,17 @@
-import React, { Component } from 'react';
-import { 
-    Text, 
+import React, { Component } from "react";
+import {
     View,
-    StyleSheet, 
+    Text,
+    StyleSheet,
     SafeAreaView,
     Platform,
     StatusBar,
-    Image 
-} from 'react-native';
-import { RFValue } from 'react-native-responsive-fontsize';
-import { FlatList } from 'react-native-gesture-handler';
-import PostCard from './PostCard';
+    Image
+} from "react-native";
+import { RFValue } from "react-native-responsive-fontsize";
+import PostCard from "./PostCard";
+
+import { FlatList } from "react-native-gesture-handler";
 
 let posts = require("./temp_posts.json");
 
@@ -20,18 +21,20 @@ export default class Feed extends Component {
         this.state = {};
     }
 
-    renderItem = ({ item: post }) => {
-        return <PostCard post={post} />
-    }
+    componentDidMount() { }
 
-    keyExtractor = (item, index) => index.toString()
+    renderItem = ({ item: post }) => {
+        return <PostCard post={post} />;
+    };
+
+    keyExtractor = (item, index) => index.toString();
 
     render() {
         return (
-            <View style={StyleSheet.container}>
-                <SafeAreaView style={StyleSheet.droidSafeArea}/>
+            <View style={styles.container}>
+                <SafeAreaView style={styles.droidSafeArea} />
                 <View style={styles.appTitle}>
-                    <View style={styles.appIcon}> 
+                    <View style={styles.appIcon}>
                         <Image
                             source={require("../assets/logo.png")}
                             style={styles.iconImage}
@@ -46,10 +49,10 @@ export default class Feed extends Component {
                         keyExtractor={this.keyExtractor}
                         data={posts}
                         renderItem={this.renderItem}
-                        />
+                    />
                 </View>
             </View>
-        )
+        );
     }
 }
 
@@ -86,4 +89,4 @@ const styles = StyleSheet.create({
     cardContainer: {
         flex: 0.85
     }
-})
+});
