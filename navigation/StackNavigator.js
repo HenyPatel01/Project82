@@ -16,5 +16,7 @@ const StackNavigator = () => {
             <Stack.Screen name="Home" component={TabNavigator} />
             <Stack.Screen name="PostScreen" component={PostScreen} />
         </Stack.Navigator>
-    )
-}
+    );
+};
+
+export default StackNavigator;
