@@ -4,11 +4,10 @@ import {
     Text,
     StyleSheet,
     Image,
-    TouchableOpacity,
+    TouchableOpacity
 } from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { RFValue } from "react-native-responsive-fontsize";
-import { TouchableOpacity } from "react-native-gesture-handler";
 
 export default class PostCard extends Component {
     constructor(props) {
