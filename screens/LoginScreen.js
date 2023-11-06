@@ -51,9 +51,6 @@ export default class LoginScreen extends Component {
 
     render() {
         const { email, password } = this.state;
-        if (!this.state.fontsLoaded) {
-            return <AppLoading />;
-        } else {
             return (
                 <View style={styles.container}>
                     <SafeAreaView style={styles.droidSafeArea} />
@@ -86,7 +83,6 @@ export default class LoginScreen extends Component {
                     </TouchableOpacity>
                 </View>
             )
-        }
     }
 }
 
