@@ -8,7 +8,8 @@ import {
     StatusBar,
     Image,
     ScrollView,
-    TextInput
+    TextInput,
+    Button
 } from "react-native";
 
 import { RFValue } from "react-native-responsive-fontsize";
@@ -121,6 +122,13 @@ export default class CreatePost extends Component {
                             placeholder={"Caption"}
                             placeholderTextColor={ this.state.light_theme ? "black" : "white"}
                         />
+                        <View style={styles.submitButton}>
+                            <Button
+                                onPress={() => this.addStory()}
+                                title="Submit"
+                                color="red"
+                            />
+                        </View>
                     </ScrollView>
                 </View>
                 <View style={{flex: 0.08}}/>
