@@ -37,6 +37,16 @@ export default class PostCard extends Component {
     }
 
     render() {
+        let post = this.state.post_data
+        let images = {
+            image_1: require("../assets/image_1.jpg"),
+            image_2: require("../assets/image_2.jpg"),
+            image_3: require("../assets/image_3.jpg"),
+            image_4: require("../assets/image_4.jpg"),
+            image_5: require("../assets/image_5.jpg"),
+            image_6: require("../assets/image_6.jpg"),
+            image_7: require("../assets/image_7.jpg")
+        };
         return (
             <TouchableOpacity style={styles.container} onPress={() => this.props.navigation.navigate("PostScreen", post = this.props.post)}>
                 <View style={ this.state.light_theme ? styles.cardContainerLight : styles.cardContainer}>

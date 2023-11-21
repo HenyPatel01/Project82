@@ -23,7 +23,9 @@ export default class CreatePost extends Component {
         this.state = {
             previewImage: "image_1",
             dropdownHeight: 40,
-            light_theme: true
+            light_theme: true,
+            name: "",
+            profile_image: ""
         }
     }
 
