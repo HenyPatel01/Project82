@@ -27,6 +27,7 @@ export default class Feed extends Component {
     }
 
     componentDidMount() { 
+        this.fetchPosts();
         this.fetchUser();
     }
 
