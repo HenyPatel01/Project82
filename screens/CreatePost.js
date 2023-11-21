@@ -47,7 +47,7 @@ export default class CreatePost extends Component {
             await firebase
                 .database()
                 .ref(
-                    "/posts/" + 
+                    "/posts/" +
                     Math.random()
                         .toString(36)
                         .slice(2)
@@ -59,12 +59,13 @@ export default class CreatePost extends Component {
         } else {
             Alert.alert(
                 "Error",
-                "All fields are required",
-                [{ text: "OK", onPress: () => console.log("OK Pressed")}],
-                { cancelable: false}
+                "All fields are required!",
+                [{ text: "OK", onPress: () => console.log("OK Pressed") }],
+                { cancelable: false }
             );
         }
     }
+
 
     fetchUser = () => {
         let theme;
