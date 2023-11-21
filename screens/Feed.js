@@ -21,13 +21,39 @@ export default class Feed extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            light_theme: true
+            light_theme: true,
+            posts: []
         };
     }
 
     componentDidMount() { 
         this.fetchUser();
     }
+
+    fetchPosts = () => {
+        firebase
+            .database()
+            .ref("/posts/")
+            .on(
+                "value",
+                snapshot => {
+                    let posts = [];
+                    if (snapshot.val()) {
+                        Object.keys(snapshot.val()).forEach(function (key) {
+                            posts.push({
+                                key: key,
+                                value: snapshot.val()[key]
+                            });
+                        });
+                    }
+                    this.setState({ posts: posts });
+                    this.props.setUpdateToFalse();
+                },
+                function (errorObject) {
+                    console.log("The read failed: " + errorObject.code);
+                }
+            );
+    };
 
     fetchUser = () => {
         let theme;
